@@ -35,7 +35,9 @@ const App = () => {
           return;
         }
         if (page === 1) {
-          positiveResponse();
+          toast.success(`Hooray! We found ${totalResults} images.`, {
+            autoClose: 3000,
+          });
         }
 
         const imagesData = response.map(
@@ -82,11 +84,9 @@ const App = () => {
     return totalPages;
   };
 
-  const positiveResponse = () => {
-    toast.success(`Hooray! We found ${totalResults} images.`, {
-      autoClose: 3000,
-    });
-  };
+  // const positiveResponse = () => {
+
+  // };
   return (
     <AppContainer>
       <Searchbar onSubmit={addSearchQuery} />
